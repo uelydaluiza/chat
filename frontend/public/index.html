@@ -22,7 +22,11 @@
 					<span class="login100-form-title p-b-43">
 						Faça Login para Continuar
 					</span>
-
+					<select id="type" name="type">
+						<option value="psychologists" >Psicólogo</option> 
+						<option value="patients" >Paciente</option>
+					  </select>
+					</br>
 					Email
 					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
 						<input class="input100" type="email" name="email" id="email" required>
@@ -82,21 +86,32 @@
 
 			const email = document.getElementById("email").value;
 			const password = document.getElementById("password").value;
+			const type = document.getElementById("type").value;
+			
+			//console.log(type);
 
 			if (email && password) {
 				axios.post(`${serverUrl()}/sessions`, {
 					email,
 					password,
-					type: 'patients' //Logon as patient, if it's another user profile, change this
+					type: type //Logon as patient, if it's another user profile, change this
 				}).then(function (response) {
-					console.log(response.data);
-					localStorage.setItem("patientId", response.data.id);
-					localStorage.setItem("userName", response.data.name);
-					window.location.href = "http://localhost:3000/buscar_psicologo";  //Redirect to first page after logon
+
+					if(type == 'patients'){
+						localStorage.setItem("patientId", response.data.id);
+						localStorage.setItem("userName", response.data.name);
+						window.location.href = "http://localhost:3000/buscar_psicologo";
+				} else{
+						localStorage.setItem("psychologistId", response.data.id);
+						localStorage.setItem("userName", response.data.name);
+						// change if it's gonna be an index for psychologists
+						window.location.href = "http://localhost:3000/buscar_psicologo";
+				}
+				 	console.log(response.data);
 				}).catch(function (error) {
 					alert("Usuário e senha incorretos"); //TODO: Show at HTML code
 				});
-			}
+			} 
 		});
 	</script>
 </body>

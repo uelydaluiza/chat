@@ -1,6 +1,6 @@
 module.exports =  function profileType(){
     return {
-        PATIENT: 'patient',
-        PSYCHOLOGIST: 'psychologist'
+        PATIENT: 'patients',
+        PSYCHOLOGIST: 'psychologists'
     };
 }

@@ -20,6 +20,30 @@ exports.seed = function (knex, Promise) {
           phone: "639998585",
           pre_diagnosis: 0,
         },
+        {
+          name: "Uelyda Souza",
+          cpf: "333.333.333-33",
+          email: "uelyda_pac@gmail.com",
+          password: "1998",
+          phone: "639998585",
+          pre_diagnosis: 0,
+        },
+        {
+          name: "Ana Santana",
+          cpf: "333.333.333-33",
+          email: "ana_pac@gmail.com",
+          password: "1999",
+          phone: "639998585",
+          pre_diagnosis: 0,
+        },
+        {
+          name: "Nycolas Loiola",
+          cpf: "333.333.333-33",
+          email: "nycolas_pac@gmail.com",
+          password: "1997",
+          phone: "639998585",
+          pre_diagnosis: 0,
+        },
       ]);
     });
 };

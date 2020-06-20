@@ -2,6 +2,10 @@ function getPatientIdLogged(){
     return localStorage.getItem("patientId");
 }
 
+function getPsychologistIdLogged(){
+    return localStorage.getItem("psychologistId");
+}
+
 function getUserNameLogged(){
     return localStorage.getItem("userName");
 }

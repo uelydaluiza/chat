@@ -29,6 +29,7 @@ app.use("/chat", (req, res) => {
   res.render("chat.html");
 });
 
+
 let messages = [];
 io.on("connection", (socket) => {
   console.log(`Socket conectado: ${socket.id}`);
