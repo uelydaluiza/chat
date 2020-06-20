@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+</head>
+
+<body style="background-color: #66d3df;">
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" name="form-login" method="POST">
+					<span class="login100-form-title p-b-43">
+						Faça Login para Continuar
+					</span>
+
+					Email
+					<div class="wrap-input100 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+						<input class="input100" type="email" name="email" id="email" required>
+						<span class="focus-input100"></span>
+					</div>
+
+					Senha
+					<div class="wrap-input100 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="password" id="password" required>
+						<span class="focus-input100"></span>
+					</div>
+
+					<div class="flex-sb-m w-full p-t-3 p-b-32">
+						<div class="contact100-form-checkbox">
+							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+							<label class="label-checkbox100" for="ckb1">
+								Lembrar-me
+							</label>
+						</div>
+
+						<div>
+							<a href="#" class="txt1">
+								Recuperar Senha
+							</a>
+						</div>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Login
+						</button>
+					</div>
+				</form>
+
+				<div class="login100-more" style="background-image: url('images/bg-01.jpg');">
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/backend.js"></script>
+	<script src="js/logged.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			if (!isAuthenticated()){ //Check if user is authenticated
+				window.location.href = "http://localhost:3000/buscar_psicologo";
+			}
+		});
+
+		$('form').on('submit', function (e) {
+			e.preventDefault();
+
+			const email = document.getElementById("email").value;
+			const password = document.getElementById("password").value;
+
+			if (email && password) {
+				axios.post(`${serverUrl()}/sessions`, {
+					email,
+					password,
+					type: 'patients' //Logon as patient, if it's another user profile, change this
+				}).then(function (response) {
+					console.log(response.data);
+					localStorage.setItem("patientId", response.data.id);
+					localStorage.setItem("userName", response.data.name);
+					window.location.href = "http://localhost:3000/buscar_psicologo";  //Redirect to first page after logon
+				}).catch(function (error) {
+					alert("Usuário e senha incorretos"); //TODO: Show at HTML code
+				});
+			}
+		});
+	</script>
+</body>
+
+</html>
