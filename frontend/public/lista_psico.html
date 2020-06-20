@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Lista de Pisicólogos </title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+  <style type="text/css">
+    .btn {
+      min-width: 80px;
+    }
+
+    table thead tr th,
+    table tbody tr td {
+      text-align: center;
+    }
+
+    body {
+      background-color: #ebf8fa
+    }
+
+    #quadro {
+      background-color: white;
+      width: 45%;
+      height: 60%;
+      border-radius: 10px;
+      margin-top: 5%;
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="" height="30" alt="" />
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="Histórico.html">Histórico</a>
+        </li>
+
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Sair</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container-fluid" id="quadro">
+    <h3 class="text-center my-3">PSICÓLOGOS DISPONÍVEIS</h3>
+    <div class="row">
+      <div class="col-md-12">
+
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">PSICÓLOGO</th>
+              <th scope="col">ESPECIALIZAÇÃO</th>
+              <th scope="col">TELEFONE</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+
+            </tr>
+            <tr>
+              <td>NYCOLAS LOIOLA</td>
+              <td>NEURO PSICOLOGIA</td>
+              <td>61-993774081</td>
+              <td>
+                <a href="https://api.whatsapp.com/send?phone=5561993774081&text=teste%20de%20integra%C3%A7%C3%A3o"" class="
+                  btn btn-sm btn-info" target="_blank">Ir para consulta</a>
+
+
+              </td>
+            </tr>
+            <tr>
+              <td>ANA FLÁVIA</td>
+              <td>PSICOPEDAGOGIA</td>
+              <td>0800-000-111</td>
+              <td>
+                <a href="chat.html" class="btn btn-sm btn-info">Ir para consulta</a>
+
+
+              </td>
+            </tr>
+            <tr>
+              <td>UELYDA LUIZA</td>
+              <td>COACH QUÂNTICO</td>
+              <td>4002-8922</td>
+              <td>
+                <a href="chat.html" class="btn btn-sm btn-info">Ir para consulta</a>
+
+
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal-excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Você tem certeza?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Se você excluir esse produto, não será possível recuperar o registro!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Sim</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
